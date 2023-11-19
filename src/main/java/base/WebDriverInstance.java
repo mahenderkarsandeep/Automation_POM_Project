@@ -7,11 +7,16 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class WebDriverInstance 
 {
+	
+
 	public static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 	
 	public static WebDriver getDriver(){
@@ -29,6 +34,8 @@ public class WebDriverInstance
 	}
 
 	public static WebDriver createDriver() throws IOException {
+		
+		
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
 		WebDriver driver = new ChromeDriver(options);
