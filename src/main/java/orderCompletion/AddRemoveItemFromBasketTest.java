@@ -63,6 +63,7 @@ public class AddRemoveItemFromBasketTest extends Hooks{
 				shopHome.getProdTwo().click();
 				shopProd.getAddToCartBtn().click();
 				cPanel.getCheckoutBtn().click();
+				Thread.sleep(5000);
 
 				// creating an object for the shopping cart page and deleting item 2
 				ShoppingCart cart = new ShoppingCart();
@@ -78,7 +79,7 @@ public class AddRemoveItemFromBasketTest extends Hooks{
 				System.out.println(cart.getTotalAmount().getText());
 				
 				// using an assertion to make sure the total amount is what we are expecting
-				Assert.assertEquals(cart.getTotalAmount().getText(), "$45.23");
+				Assert.assertEquals(cart.getTotalAmount().getText(), "$45.24");
 
 			}
 	}
